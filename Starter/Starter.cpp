@@ -2,6 +2,8 @@
 #include "..\PluginFramework\PluginManager.h"
 #include <Windows.h>
 #include <iostream>
+#include <typeinfo>  //for 'typeid' to work  
+#include "..\Plugin_01\PluginLogic.h"
 
 
 int main(int argc, char* argv[])
@@ -63,6 +65,12 @@ int main(int argc, char* argv[])
 			Plugin* plg_ptr = plugin_call();
 
 			std::cout << plg_ptr->get_name();
+
+			PluginLogic* plg_logic = dynamic_cast<PluginLogic*>(plg_ptr);
+			if (plg_logic) {
+				plg_logic->custom_mfunct();
+				std::cout << "sadfsad";
+			}
 		}
 	}
 	else

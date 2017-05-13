@@ -16,4 +16,7 @@ std::string PluginLogic::get_name() {
 	return "my fance name";
 }
 
+void PluginLogic::custom_mfunct() {
+	std::cout << "PluginLogic::custom_mfunct()" << std::endl;
+}
 
