@@ -36,6 +36,7 @@ PluginManager::PluginManager() : m_storage(PluginStorage())
 {
 	dll_names.push_back("Plugin_01.dll");
 	dll_names.push_back("Plugin_02.dll");
+	dll_names.push_back("Plugin_03.dll");
 }
 
 

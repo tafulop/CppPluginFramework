@@ -10,6 +10,10 @@
 #define PLUGIN_01_API __declspec(dllimport)
 #endif
 
+#include "PluginLogic.h"
 #include <iostream>
 
 extern "C" PLUGIN_01_API std::string get_name(void);
+
+
+extern "C" PLUGIN_01_API Plugin* create_plugin(void);

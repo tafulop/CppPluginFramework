@@ -3,9 +3,14 @@
 
 #include "stdafx.h"
 #include "Plugin_01.h"
+#include "PluginLogic.h"
 
 // This is an example of an exported function.
-PLUGIN_01_API std::string get_name(void)
+ std::string get_name(void)
 {
     return std::string("Plugin 02 is my name, let us play my game!");
+}
+
+Plugin* create_plugin() {
+	return new PluginLogic();
 }
