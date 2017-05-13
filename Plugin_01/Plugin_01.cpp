@@ -7,5 +7,5 @@
 // This is an example of an exported function.
 PLUGIN_01_API std::string get_name(void)
 {
-    return std::string("Plugin 01 is my name");
+    return std::string("Plugin 02 is my name, let us play my game!");
 }

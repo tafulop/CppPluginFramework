@@ -11,15 +11,33 @@ int main(int argc, char* argv[])
 
 	plugin_get_name_funct caller;
 
-	HMODULE handle = manager.get_plugin("Plugin_01.dll");
+	HMODULE handle_1 = manager.get_plugin("Plugin_01.dll");
 
-	if (handle) {
+	if (handle_1) {
 
-		caller = (plugin_get_name_funct)GetProcAddress(handle, "get_name");
+		caller = (plugin_get_name_funct)GetProcAddress(handle_1, "get_name");
 
 		if (NULL != caller)
 		{
-			std::cout << caller();
+			std::cout << caller() << std::endl;
+		}
+	}
+	else
+	{
+		std::cout << "can not find plugin" << std::endl;
+	}
+
+
+
+	HMODULE handle_2 = manager.get_plugin("Plugin_02.dll");
+
+	if (handle_2) {
+
+		caller = (plugin_get_name_funct)GetProcAddress(handle_2, "get_name");
+
+		if (NULL != caller)
+		{
+			std::cout << caller() << std::endl;;
 		}
 	}
 	else
